@@ -1,8 +1,6 @@
 import React from "react";
 import AboutCard from "./AboutCard";
 
-
-  
   const About = () => (
     <section className="py-24 bg-gradient-to-b from-gray-900 via-gray-800 to-emerald-900">
       <div className="container mx-auto px-6">

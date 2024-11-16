@@ -1,24 +1,17 @@
 import React from 'react';
+import Book from './Book';
 
-const BookList = () => {
-  // Replace this with actual book data
-  const books = [
-    { id: 1, title: 'Book 1', author: 'Author 1' },
-    { id: 2, title: 'Book 2', author: 'Author 2' },
-    { id: 3, title: 'Book 3', author: 'Author 3' },
-  ];
-
+const BookList = ({ books, handleEdit, handleDelete }) => {
   return (
-    <div>
-      <h2>Book List</h2>
-      <ul>
-        {books.map((book) => (
-          <li key={book.id}>
-            <h3>{book.title}</h3>
-            <p>Author: {book.author}</p>
-          </li>
-        ))}
-      </ul>
+    <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+      {books.map(book => (
+        <Book
+          key={book._id}
+          book={book}
+          onEdit={handleEdit}
+          onDelete={handleDelete}
+        />
+      ))}
     </div>
   );
 };

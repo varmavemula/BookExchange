@@ -1,0 +1,87 @@
+[
+{
+    "_id": {
+      "$oid": "655536a1e5d35a5c3f968e206"
+    },
+    "title": "The Forgotten Path",
+    "author": "Isabella Martinez",
+    "publishedYear": 2023,
+    "genre": "adventure",
+    "description": "An archaeologist's journey through unmapped territories reveals ancient secrets.",
+    "userId": {
+      "$oid": "6732e93efea5c9e8fc4801f3"
+    },
+    "createdAt": {
+      "$date": "2024-11-15T12:30:15.224Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "655536a1e5d35a5c3f968e207"
+    },
+    "title": "Digital Hearts",
+    "author": "Sophia Lee",
+    "publishedYear": 2024,
+    "genre": "romance",
+    "description": "A modern love story exploring relationships in the age of virtual reality.",
+    "userId": {
+      "$oid": "6732e93efea5c9e8fc4801f3"
+    },
+    "createdAt": {
+      "$date": "2024-11-15T12:30:15.224Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "655536a1e5d35a5c3f968e208"
+    },
+    "title": "The Green Revolution",
+    "author": "Daniel Foster",
+    "publishedYear": 2024,
+    "genre": "non-fiction",
+    "description": "An inspiring look at innovative solutions to climate change and environmental challenges.",
+    "userId": {
+      "$oid": "6732e93efea5c9e8fc4801f3"
+    },
+    "createdAt": {
+      "$date": "2024-11-15T12:30:15.224Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "655536a1e5d35a5c3f968e209"
+    },
+    "title": "Symphony of Shadows",
+    "author": "Victoria Black",
+    "publishedYear": 2023,
+    "genre": "horror",
+    "description": "A haunting tale of a cursed musical composition that brings nightmares to life.",
+    "userId": {
+      "$oid": "6732e93efea5c9e8fc4801f3"
+    },
+    "createdAt": {
+      "$date": "2024-11-15T12:30:15.224Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "655536a1e5d35a5c3f968e210"
+    },
+    "title": "Beyond the Code",
+    "author": "Alex Wong",
+    "publishedYear": 2024,
+    "genre": "biography",
+    "description": "The inspiring story of a self-taught programmer who revolutionized artificial intelligence.",
+    "userId": {
+      "$oid": "6732e93efea5c9e8fc4801f3"
+    },
+    "createdAt": {
+      "$date": "2024-11-15T12:30:15.224Z"
+    },
+    "__v": 0
+  }
+]

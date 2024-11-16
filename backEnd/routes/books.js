@@ -8,6 +8,7 @@ const User = require('../models/UserDB');
 router.get('/books', async (req, res) => {
     try {
         const books = await Book.find().populate('userId', 'name email -_id');
+        console.log(books);
         res.json(books);
     } catch (error) {
         res.status(500).json({ message: error.message });
@@ -40,7 +41,10 @@ router.post('/books', async (req, res) => {
             publishedYear: req.body.publishedYear,
             genre: req.body.genre,
             description: req.body.description,
-            userId: req.body.userId
+            userId: req.body.userId,
+            tags:req.body.tags,
+            available:req.body.available,
+            condition:req.body.condition
         });
 
         const newBook = await book.save();

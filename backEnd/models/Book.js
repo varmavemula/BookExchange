@@ -28,6 +28,21 @@ const bookSchema = new mongoose.Schema({
         ref: 'User',
         required: true
     },
+
+    tags:{
+        type: Array,
+        required:false
+    },
+
+    available:{
+        type:Boolean,
+        required:true
+    },
+
+    condition:{
+        type:String,
+        required:true
+    },
     createdAt: { 
         type: Date, 
         default: Date.now 
