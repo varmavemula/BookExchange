@@ -17,7 +17,7 @@ router.post('/register', async (req, res) => {
         }
 
         // Create new user
-        user = new User({ username, email, password});
+        user = new User({ username, email, password });
 
         // Hash the password before saving
         const salt = await bcrypt.genSalt(10);
@@ -35,7 +35,6 @@ router.post('/register', async (req, res) => {
     }
 });
 
-
 // Login Route
 router.post('/signin', async (req, res) => {
     const { email, password } = req.body;
@@ -44,7 +43,7 @@ router.post('/signin', async (req, res) => {
     try {
         // Check if user exists
         let user = await User.findOne({ email });
-        
+
         if (!user) {
             return res.status(400).json({ msg: 'Invalid credentials' });
         }
@@ -55,18 +54,19 @@ router.post('/signin', async (req, res) => {
             return res.status(400).json({ msg: 'Invalid credentials' });
         }
 
-        userData = {
+        // Prepare user data to be sent in the response
+        const userData = {
             _id: user._id,
             username: user.username,
             email: user.email
-        }
+        };
         console.log(userData);
 
         // Create and return JWT token
         const payload = { user: { id: user.id } };
         const token = jwt.sign(payload, JWT_SECRET, { expiresIn: '1h' });
         res.json({ token, user: userData });
-        
+
     } catch (err) {
         console.error(err.message);
         res.status(500).send('Server error');
@@ -80,11 +80,13 @@ router.get('/protected', verifyToken, (req, res) => {
 
 // Middleware to verify JWT token
 function verifyToken(req, res, next) {
+    // Get the token from the request header
     const token = req.header('x-auth-token');
     if (!token) {
         return res.status(401).json({ msg: 'No token, authorization denied' });
     }
     try {
+        // Verify the token
         const decoded = jwt.verify(token, JWT_SECRET);
         req.user = decoded.user;
         next();
@@ -92,6 +94,5 @@ function verifyToken(req, res, next) {
         res.status(401).json({ msg: 'Token is not valid' });
     }
 }
-
 
 module.exports = router;

@@ -147,7 +147,7 @@ const AuthModal = ({ isOpen, onClose, activeTab, onTabChange }) => {
         navigate('/forgetPassword');
         // or
         // setForgotPasswordModalOpen(true);
-    }; 
+    };
 
     const handleSignup = async (e) => {
         e.preventDefault();
@@ -186,8 +186,8 @@ const AuthModal = ({ isOpen, onClose, activeTab, onTabChange }) => {
 
                 <div className="relative bg-gray-900/50 backdrop-blur-2xl rounded-2xl p-6 lg:p-8 
                         border border-white/10 shadow-2xl">
-                    <div className="fixed inset-0 backdrop-blur-lg bg-black/40 flex items-center justify-center z-50">
-                        <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 w-full max-w-md mx-4 border border-white/20 shadow-2xl">
+                    <div className="inset-0 backdrop-blur-lg bg-black/40 flex items-center justify-center z-50">
+                        <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 w-full max-w-md border border-white/20 shadow-2xl">
                             {error && (
                                 <div className="mb-4 p-3 bg-red-500/10 backdrop-blur-md text-red-100 rounded-lg border border-red-500/20">
                                     {error}
@@ -331,7 +331,7 @@ const AuthModal = ({ isOpen, onClose, activeTab, onTabChange }) => {
     );
 };
 
-
+ 
 
 
 const IntroPage = () => {

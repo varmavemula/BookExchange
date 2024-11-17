@@ -2,26 +2,26 @@ const mongoose = require('mongoose');
 
 
 const bookSchema = new mongoose.Schema({
-    title: { 
-        type: String, 
-        required: true 
-    },
-    author: { 
-        type: String, 
-        required: true 
-    },
-    
-    publishedYear: { 
-        type: Number, 
-        required: true 
-    },
-    genre: { 
+    title: {
         type: String,
-        required: false 
+        required: true
     },
-    description: { 
+    author: {
         type: String,
-        required: false 
+        required: true
+    },
+
+    publishedYear: {
+        type: Number,
+        required: true
+    },
+    genre: {
+        type: String,
+        required: false
+    },
+    description: {
+        type: String,
+        required: false
     },
     userId: {
         type: mongoose.Schema.Types.ObjectId,
@@ -29,23 +29,23 @@ const bookSchema = new mongoose.Schema({
         required: true
     },
 
-    tags:{
+    tags: {
         type: Array,
-        required:false
+        required: false
     },
 
-    available:{
-        type:Boolean,
-        required:true
+    available: {
+        type: Boolean,
+        required: true
     },
 
-    condition:{
-        type:String,
-        required:true
+    condition: {
+        type: String,
+        required: true
     },
-    createdAt: { 
-        type: Date, 
-        default: Date.now 
+    createdAt: {
+        type: Date,
+        default: Date.now
     }
 });
 

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Mail, KeyRound, LockKeyhole, ArrowLeft, CheckCircle } from 'lucide-react';
+import { Mail, KeyRound, LockKeyhole, ArrowLeft } from 'lucide-react';
 import axios from 'axios';
 
 const ForgetPassword = () => {
@@ -105,29 +105,26 @@ const ForgetPassword = () => {
             {steps.map((s, index) => (
               <React.Fragment key={s.number}>
                 <div className="flex flex-col items-center">
-                  <div 
+                  <div
                     className={`w-10 h-10 rounded-full flex items-center justify-center 
-                             ${step >= s.number 
-                               ? 'bg-emerald-500/20 border-emerald-500' 
-                               : 'bg-white/5 border-white/20'} 
+                             ${step >= s.number
+                        ? 'bg-emerald-500/20 border-emerald-500'
+                        : 'bg-white/5 border-white/20'} 
                              border-2 transition-all duration-300`}
                   >
-                    <s.icon 
-                      className={`w-5 h-5 ${
-                        step >= s.number ? 'text-emerald-400' : 'text-white/50'
-                      }`} 
+                    <s.icon
+                      className={`w-5 h-5 ${step >= s.number ? 'text-emerald-400' : 'text-white/50'
+                        }`}
                     />
                   </div>
-                  <span className={`mt-2 text-xs ${
-                    step >= s.number ? 'text-white' : 'text-white/50'
-                  }`}>
+                  <span className={`mt-2 text-xs ${step >= s.number ? 'text-white' : 'text-white/50'
+                    }`}>
                     {s.title}
                   </span>
                 </div>
                 {index < steps.length - 1 && (
-                  <div className={`h-[2px] flex-1 mx-4 ${
-                    step > s.number ? 'bg-emerald-500/50' : 'bg-white/10'
-                  }`} />
+                  <div className={`h-[2px] flex-1 mx-4 ${step > s.number ? 'bg-emerald-500/50' : 'bg-white/10'
+                    }`} />
                 )}
               </React.Fragment>
             ))}
@@ -170,10 +167,10 @@ const ForgetPassword = () => {
                 type="submit"
                 disabled={loading}
                 className={`w-full py-3 rounded-lg backdrop-blur-md transition-all duration-300 
-                         ${loading 
-                           ? 'bg-emerald-500/30 cursor-not-allowed' 
-                           : 'bg-emerald-500/50 hover:bg-emerald-500/70 border border-emerald-400/30'
-                         } text-white font-semibold`}
+                         ${loading
+                    ? 'bg-emerald-500/30 cursor-not-allowed'
+                    : 'bg-emerald-500/50 hover:bg-emerald-500/70 border border-emerald-400/30'
+                  } text-white font-semibold`}
               >
                 {loading ? 'Sending...' : 'Send OTP'}
               </button>
@@ -211,10 +208,10 @@ const ForgetPassword = () => {
                   type="submit"
                   disabled={loading}
                   className={`flex-1 py-3 rounded-lg backdrop-blur-md transition-all duration-300 
-                           ${loading 
-                             ? 'bg-emerald-500/30 cursor-not-allowed' 
-                             : 'bg-emerald-500/50 hover:bg-emerald-500/70 border border-emerald-400/30'
-                           } text-white font-semibold`}
+                           ${loading
+                      ? 'bg-emerald-500/30 cursor-not-allowed'
+                      : 'bg-emerald-500/50 hover:bg-emerald-500/70 border border-emerald-400/30'
+                    } text-white font-semibold`}
                 >
                   {loading ? 'Verifying...' : 'Verify OTP'}
                 </button>
@@ -268,10 +265,10 @@ const ForgetPassword = () => {
                   type="submit"
                   disabled={loading}
                   className={`flex-1 py-3 rounded-lg backdrop-blur-md transition-all duration-300 
-                           ${loading 
-                             ? 'bg-emerald-500/30 cursor-not-allowed' 
-                             : 'bg-emerald-500/50 hover:bg-emerald-500/70 border border-emerald-400/30'
-                           } text-white font-semibold`}
+                           ${loading
+                      ? 'bg-emerald-500/30 cursor-not-allowed'
+                      : 'bg-emerald-500/50 hover:bg-emerald-500/70 border border-emerald-400/30'
+                    } text-white font-semibold`}
                 >
                   {loading ? 'Resetting...' : 'Reset Password'}
                 </button>

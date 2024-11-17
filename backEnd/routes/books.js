@@ -19,7 +19,7 @@ router.get('/books', async (req, res) => {
 router.get('/books/user/:userId', async (req, res) => {
     try {
         const books = await Book.find({ userId: req.params.userId })
-                               .populate('userId', 'name email -_id');
+            .populate('userId', 'name email -_id');
         res.json(books);
     } catch (error) {
         res.status(500).json({ message: error.message });
@@ -42,9 +42,9 @@ router.post('/books', async (req, res) => {
             genre: req.body.genre,
             description: req.body.description,
             userId: req.body.userId,
-            tags:req.body.tags,
-            available:req.body.available,
-            condition:req.body.condition
+            tags: req.body.tags,
+            available: req.body.available,
+            condition: req.body.condition
         });
 
         const newBook = await book.save();
@@ -58,14 +58,14 @@ router.post('/books', async (req, res) => {
 // UPDATE book (checking user ownership)
 router.put('/books/:id', async (req, res) => {
     try {
-        const book = await Book.findOne({ 
-            _id: req.params.id, 
-            userId: req.body.userId 
+        const book = await Book.findOne({
+            _id: req.params.id,
+            userId: req.body.userId
         });
 
         if (!book) {
-            return res.status(404).json({ 
-                message: 'Book not found or user does not have permission' 
+            return res.status(404).json({
+                message: 'Book not found or user does not have permission'
             });
         }
 
@@ -81,14 +81,14 @@ router.put('/books/:id', async (req, res) => {
 // DELETE book (checking user ownership)
 router.delete('/books/:id', async (req, res) => {
     try {
-        const book = await Book.findOne({ 
-            _id: req.params.id, 
-            userId: req.query.userId 
+        const book = await Book.findOne({
+            _id: req.params.id,
+            userId: req.query.userId
         });
 
         if (!book) {
-            return res.status(404).json({ 
-                message: 'Book not found or user does not have permission' 
+            return res.status(404).json({
+                message: 'Book not found or user does not have permission'
             });
         }
 

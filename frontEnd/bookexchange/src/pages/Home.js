@@ -3,8 +3,9 @@ import { Search, Book, Filter } from 'lucide-react';
 import BookListContainer from '../components/BookListContainer';
 import axios from 'axios';
 import Layout from '../components/Layout';
+import API_BASE_URL from '../utils/constants.js';
 
-const API_BASE_URL = 'http://localhost:3001';
+// const API_BASE_URL = 'http://localhost:3001';
 
 const Home = () => {
   const [books, setBooks] = useState([]);
@@ -41,14 +42,14 @@ const Home = () => {
 
     // Filter by title
     if (searchParams.title) {
-      results = results.filter(book => 
+      results = results.filter(book =>
         book.title.toLowerCase().includes(searchParams.title.toLowerCase())
       );
     }
 
     // Filter by author
     if (searchParams.author) {
-      results = results.filter(book => 
+      results = results.filter(book =>
         book.author.toLowerCase().includes(searchParams.author.toLowerCase())
       );
     }
@@ -60,7 +61,7 @@ const Home = () => {
 
     // Filter by availability
     if (searchParams.available) {
-      results = results.filter(book => 
+      results = results.filter(book =>
         book.available === (searchParams.available === 'true')
       );
     }
@@ -102,9 +103,9 @@ const Home = () => {
         <div className="max-w-3xl mx-auto px-6 space-y-4">
           {/* Main Search Bar */}
           <div className="relative">
-            <input 
-              type="text" 
-              placeholder="Search by title..." 
+            <input
+              type="text"
+              placeholder="Search by title..."
               value={searchParams.title}
               onChange={(e) => setSearchParams(prev => ({ ...prev, title: e.target.value }))}
               className="w-full px-6 py-4 pl-12 rounded-xl 
@@ -118,7 +119,7 @@ const Home = () => {
                        shadow-lg hover:shadow-xl"
             />
             <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/50 h-5 w-5" />
-            
+
             {/* Filter Toggle */}
             <button
               type="button"
@@ -216,6 +217,7 @@ const Home = () => {
               <BookListContainer
                 books={genreBooks}
                 isLoading={false}
+                 
               />
             </div>
           ))
